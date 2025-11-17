@@ -25,7 +25,7 @@ public class reloj_movimiento {
         int milisegs = Integer.parseInt(System.console().readLine("Milisegundos de recarga (normal: 500-100 | epilepsia: 99-10): "));
         int mitad = (int) Math.ceil(altura / 2);
         int asteriscos1 = altura - 2; //asteriscos primera linea
-        int espacios1 = 0; // espacios primera linea
+        int espacios1 = 3; // espacios primera linea
         int izq = 1; // 1 porque 0 es el exterior del reloj de arena
         int der = asteriscos1 - 3; // asteriscos-2 es el exterior del reloj de arena
         int fila = 2; // empieza por la fila siguiente del exterior del reloj de arena
@@ -88,7 +88,7 @@ public class reloj_movimiento {
                 System.out.println("");
             }
             contador++;
-            if (contador == mitad-2) { // empezar a sumar asteriscos en piramide debajo
+            if (contador == mitad-3) { // empezar a sumar asteriscos en piramide debajo
                 der2 = mitad-2;
                 izq2 = mitad-1;
             }
@@ -112,12 +112,15 @@ public class reloj_movimiento {
                 izq2--;
             }
             Thread.sleep(milisegs);
-            if (fila2 >= mitad-2) {
+             if (fila2 >= mitad-2){
                 limpiarPantalla();
-            }
+             } else {
+                System.out.println("RELOJ DE ARENA COMPLETADO!!!");
+             }
+            
             
         }
-        System.out.println("RELOJ DE ARENA COMPLETADO!!!");
+       
 
     }
 }
